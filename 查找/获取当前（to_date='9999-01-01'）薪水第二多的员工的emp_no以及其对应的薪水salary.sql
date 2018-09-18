@@ -1,0 +1,1 @@
+select emp_no,salary from salaries s where s.to_date = '9999-01-01' order by s.salary desc limit 1,1
