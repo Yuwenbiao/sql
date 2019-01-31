@@ -1,0 +1,11 @@
+    <!--批量获取用户的手机号、头像昵称、积分以及shareId-->
+    <select id="listPicNick" resultMap="picNickInfo" parameterClass="java.util.List">
+        select b.mobile,nick_name,pic_url,integral,share_id from table_name_a as a right join
+        table_name_b as b
+        on a.mobile=b.mobile
+        where
+        b.mobile in
+        <iterate conjunction="," open="(" close=")">
+            #mobiles[]#
+        </iterate>
+    </select>
